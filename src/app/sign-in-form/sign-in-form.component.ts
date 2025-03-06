@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 
 @Component({
+  standalone: true,
   selector: 'app-sign-in-form',
   imports: [ReactiveFormsModule],
   templateUrl: './sign-in-form.component.html',
