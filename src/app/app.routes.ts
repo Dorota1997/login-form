@@ -8,4 +8,11 @@ export const routes: Routes = [
         (component) => component.SignInFormComponent
       ),
   },
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./pages/dashboard/dashboard.component').then(
+        (component) => component.DashboardComponent
+      ),
+  },
 ];
