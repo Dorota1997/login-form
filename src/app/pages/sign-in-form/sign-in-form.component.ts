@@ -17,7 +17,7 @@ export class SignInFormComponent {
   private formBuilder = inject(FormBuilder);
 
   signInForm: FormGroup = this.formBuilder.group({
-    email: ['', Validators.required],
+    email: ['', [Validators.required, emailPatternValidator()]],
     password: ['', Validators.required],
   });
 }
