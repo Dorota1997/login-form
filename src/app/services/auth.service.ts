@@ -13,6 +13,12 @@ export class AuthService {
       token += charset[Math.floor(Math.random() * charset.length)];
     });
 
+    this.saveTokenInLocalStorage(token);
+
     return token;
+  }
+
+  saveTokenInLocalStorage(token: string): void {
+    localStorage.setItem('token', token);
   }
 }
