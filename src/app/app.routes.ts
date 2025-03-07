@@ -4,8 +4,15 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./sign-in-form/sign-in-form.component').then(
+      import('./pages/sign-in-form/sign-in-form.component').then(
         (component) => component.SignInFormComponent
+      ),
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./pages/dashboard/dashboard.component').then(
+        (component) => component.DashboardComponent
       ),
   },
 ];
