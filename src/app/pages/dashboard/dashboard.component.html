@@ -1,0 +1,21 @@
+<div
+  *ngIf="user$ | async as userData"
+  class="flex justify-center h-screen items-center stats shadow"
+>
+  <div class="stat place-items-center">
+    <div class="stat-title">Imię i Nazwisko</div>
+    <div class="stat-value">
+      {{ userData.firstName }} {{ userData.lastName }}
+    </div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">E-mail</div>
+    <div class="stat-value text-secondary">{{ userData.email }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Nazwa użytkownika</div>
+    <div class="stat-value">{{ userData.username }}</div>
+  </div>
+</div>
