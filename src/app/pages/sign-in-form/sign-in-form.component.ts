@@ -1,13 +1,14 @@
 import { Router } from '@angular/router';
 import { Component, inject } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { emailPatternValidator } from '../../validators/email.validator';
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+
+import { AuthService } from '../../services/auth.service';
+import { emailPatternValidator } from '../../validators/email.validator';
 
 @Component({
   standalone: true,
