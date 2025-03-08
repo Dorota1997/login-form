@@ -8,7 +8,6 @@ import { UserService } from '../../services/user.service';
   selector: 'app-dashboard',
   imports: [CommonModule],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
   private userService = inject(UserService);
