@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
+  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
@@ -9,13 +10,13 @@ import {
 
 import { AuthService } from '../../services/auth.service';
 import { emailPatternValidator } from '../../validators/email.validator';
+import { TextInputComponent } from '../../shared/text-input/text-input.component';
 
 @Component({
   standalone: true,
   selector: 'app-sign-in-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, TextInputComponent],
   templateUrl: './sign-in-form.component.html',
-  styleUrl: './sign-in-form.component.scss',
 })
 export class SignInFormComponent {
   private formBuilder = inject(FormBuilder);
@@ -26,6 +27,14 @@ export class SignInFormComponent {
     email: ['', [Validators.required, emailPatternValidator()]],
     password: ['', Validators.required],
   });
+
+  get emailControl(): FormControl {
+    return this.signInForm.get('email') as FormControl;
+  }
+
+  get passwordControl(): FormControl {
+    return this.signInForm.get('password') as FormControl;
+  }
 
   onSubmit(): void {
     if (this.signInForm.valid) {
