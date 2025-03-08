@@ -1,0 +1,15 @@
+$invalid-color: red;
+$error-font-size: 12px;
+$border-width: 1px;
+
+.error-messages {
+  color: $invalid-color;
+  font-size: $error-font-size;
+  margin-top: 4px;
+  font-weight: bold; 
+}
+
+input.ng-touched.ng-invalid {
+  border: $border-width solid $invalid-color;
+  outline: none; 
+}

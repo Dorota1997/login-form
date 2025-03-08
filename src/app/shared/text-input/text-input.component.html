@@ -1,0 +1,18 @@
+<div class="form-control">
+  <label class="label">
+    <span class="label-text">{{ label }}</span>
+  </label>
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    class="input input-bordered"
+    required
+  />
+
+  <div *ngIf="isInvalid" class="error-messages">
+    <ul>
+      <li *ngFor="let error of errorMessages">{{ error }}</li>
+    </ul>
+  </div>
+</div>
