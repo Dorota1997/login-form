@@ -9,7 +9,7 @@ import { User } from '../interfaces/user.interface';
 })
 export class UserService {
   private httpClient = inject(HttpClient);
-  private apiUrl = 'user-data.json';
+  private apiUrl: string = 'user-data.json';
 
   getUserData(): Observable<User> {
     return this.httpClient.get<User>(this.apiUrl);

@@ -6,10 +6,10 @@ export function emailPatternValidator(): ValidatorFn {
       return null;
     }
 
-    const emailPattern =
+    const emailPattern: RegExp =
       /^[a-z0-9](?:[a-z0-9._%+-]*[a-z0-9])?@[a-z0-9.-]+\.[a-z]{2,}$/;
 
-    const isValid = emailPattern.test(control.value);
+    const isValid: boolean = emailPattern.test(control.value);
 
     return isValid
       ? null

@@ -1,7 +1,9 @@
+import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 
 import { UserService } from '../../services/user.service';
+import { User } from '../../interfaces/user.interface';
 
 @Component({
   standalone: true,
@@ -12,5 +14,5 @@ import { UserService } from '../../services/user.service';
 export class DashboardComponent {
   private userService = inject(UserService);
 
-  user$ = this.userService.getUserData();
+  user$: Observable<User> = this.userService.getUserData();
 }
