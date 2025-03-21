@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    const isLoggedIn = localStorage.getItem('token') !== null;
+    const isLoggedIn: boolean = localStorage.getItem('token') !== null;
 
     if (isLoggedIn && route.routeConfig?.path === '') {
       this.router.navigate(['/dashboard']);

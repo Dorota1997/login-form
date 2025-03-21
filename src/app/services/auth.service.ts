@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   generateToken(length: number = 512): string {
-    const charset =
+    const charset: string =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let token = '';
+    let token: string = '';
 
     Array.from({ length }).forEach(() => {
       token += charset[Math.floor(Math.random() * charset.length)];
