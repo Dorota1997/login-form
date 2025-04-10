@@ -1,10 +1,11 @@
-import { UserService } from './user.service';
 import { TestBed } from '@angular/core/testing';
-import { User } from '../interfaces/user.interface';
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
+
+import { UserService } from './user.service';
+import { User } from '../interfaces/user.interface';
 
 describe('UserService', () => {
   let service: UserService;
